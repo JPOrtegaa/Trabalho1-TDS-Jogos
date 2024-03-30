@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  background-color: #BFFFF5;
+}
+
+#logo{
+  margin-top: 2%;
+  margin-left: 5%;
+  height: 50px;
+}
+
+.login{
+  margin-left: 70%;
+  margin-bottom: 1%;
+  width: 120px;
+  height: 50px;
+  background-color: #BFFFF5;
+  border-radius: 10%;
+}
+
+.main{
+  background-color: #00AB78;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+}
+
+.jogos{
+  border: #ffff 2px solid;
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 75%;
+}
+
+.novojogo{
+  background-color: #00AB78;
+  border: #ffff 2px solid;
+  border-radius: 3%;
+  margin: 2%;
+  width: 96%;
+  height: 10%;
+}
+
+.lista{
+  border: #ffff 2px solid;
+  margin-left: 5%;
+  margin-top: 10%;
+  width: 50%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007865;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#logofooter{
+  margin-top: 2%;
+  height: 50px;
+}
