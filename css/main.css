@@ -1,0 +1,86 @@
+.main{
+  background-color: #00AB78;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+}
+
+.biblioteca{
+  margin-top: 1.5%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 20%;
+  height: 75%;
+}
+
+.jogos{
+  border: #ffff 2px solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.novojogo{
+  background-color: #00AB78;
+  border: #ffff 2px solid;
+  border-radius: 3%;
+  margin: 2%;
+  width: 96%;
+  height: 10%;
+}
+
+.capa{
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1%;
+  margin-right: 2%;
+}
+
+.jogo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2%;
+  white-space: nowrap;
+}
+
+.recentes{
+  margin-left: 5%;
+  margin-top: 1.5%;
+  width: 60%;
+  height: 35%;
+}
+
+.lista{
+  border: #ffff 2px solid;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.capajogado{
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.jogado{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin: 2%;
+  border: #ffff 2px solid;
+  background-image: url(../imagens/dbdlogo.jpg);
+  background-size: 100px;
+  background-position: 0% top;
+  background-repeat: no-repeat;
+  width: 13%;
+  height: 80%;
+}
