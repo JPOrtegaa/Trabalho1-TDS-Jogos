@@ -16,6 +16,7 @@
   </header>
   <main class="main">
     <form class="cadastro">
+
         <div class="campo">
           <label><strong>Nome do jogo</strong></label>
           <input type="text" required>
@@ -28,15 +29,16 @@
           </div>
 
           <div class="fabricante">
-            <label><strong>Data de fabricação</strong></label>
+            <label><strong>Data de lançamento</strong></label>
             <input type="date" required>
           </div>
         </div>
+
         <div class="campo">
           <label><strong>Categoria</strong></label>
           <div class="categorias">
             <label>
-              <input type="radio" name="tipo1" value="Ação" checked>Ação
+              <input type="radio" name="tipo1" value="Ação">Ação
             </label>
             <label>
               <input type="radio" name="tipo3" value="Aventura">Aventura
@@ -63,6 +65,11 @@
               <input type="radio" name="tipo4" value="Outros">Outros
             </label>
           </div>
+        </div>
+
+        <div class="campo">
+          <label><strong>Imagem</strong></label>
+          <input type="file">
         </div>
 
         <div class="campo">
