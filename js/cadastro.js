@@ -1,5 +1,6 @@
 const form = document.querySelector('.cadastro');
 
+let gameList = [];
 
 
 form.addEventListener('submit', function(event){
@@ -9,13 +10,17 @@ form.addEventListener('submit', function(event){
     const gameData = {}
 
     for(let field of form.elements){
-        if(field.tagName === 'INPUT' && field.tagName !== 'submit'){
-            console.log(field);
-            gameData[field.name] = field.value;
 
+        if(field.type == 'radio'){
+            if(field.checked)
+                gameData[field.name] = field.value;
+        }
+        else{
+            gameData[field.name] = field.value;
         }
     }
 
-    console.log(gameData);
+    gameList.push(gameData);
+    console.log(gameList);
 
 })
