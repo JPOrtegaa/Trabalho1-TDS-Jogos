@@ -26,7 +26,7 @@
 .footer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: #007865;
   bottom: 0;
   position: fixed;
@@ -34,6 +34,12 @@
 }
 
 #logofooter{
-  margin-top: 2%;
+  margin: 0.7rem;
   height: 50px;
+}
+
+.Desenvolvedores{
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-bottom: 0.7rem;
 }
