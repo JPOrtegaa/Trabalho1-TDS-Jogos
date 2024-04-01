@@ -12,13 +12,17 @@
 </head>
 
 <body>
-  <header class="header">
-    <img src="imagens/logo 1.png" id="logo">
-    <h6>Trabalho de Tecnologia e Desenvolvimento de software</h6>
-    <button class="login">
-      <img src="imagens/login-de-usuario 1.png" id="login">
-    </button>
-  </header>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="topo">
+        <img src="imagens/logo 1.png" id="logo">
+        <h6>Trabalho de Tecnologia e Desenvolvimento de software</h6>
+      </div>
+      <button class="login">
+        <img src="imagens/login-de-usuario 1.png" id="login">
+      </button>
+    </div>
+  </nav>
   
   <main class="main">
     <div class="biblioteca">
@@ -37,16 +41,24 @@
     <div class="recentes">
       <h4>Jogados recentemente</h4>
       <div class="lista">
-        <div class="jogado">
-          <i class="bi bi-play-circle"></i>
-          22,4 horas
+        <div class="card" style="width: 6.5rem; height: 10rem;">
+          <img src="imagens/dbdlogo.jpg" class="card-img-top">
+          <div class="card-body">
+            <strong>Dead by Daylight</strong>
+            <div class="info">
+              <a href="#" class="btn btn-primary">
+                <i class="bi bi-play-circle"></i>
+              </a>
+              22,4 horas
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="trofeis">
+    <div class="trofeus">
       <h4>Troféus</h4>
       <div class="trofeu">
-        <img src="imagens/dbdlogo.jpg" class="capa">
+        <img src="imagens/dbdlogo.jpg" class="trof">
         nome conquista
         37%
       </div>
