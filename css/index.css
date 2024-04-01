@@ -5,17 +5,18 @@
 
 .header{
   background-color: #BFFFF5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
 }
 
 #logo{
-  margin-top: 2%;
-  margin-left: 5%;
   height: 50px;
 }
 
 .login{
   margin-left: 70%;
-  margin-bottom: 1%;
   width: 120px;
   height: 50px;
   background-color: #BFFFF5;
@@ -28,7 +29,7 @@
   justify-content: center;
   background-color: #007865;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
