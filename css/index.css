@@ -18,14 +18,14 @@
   margin-right: 3rem;
   width: 120px;
   height: 50px;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 .footer{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: #007865;
+  background-color: #ababab;
   bottom: 0;
   position: fixed;
   width: 100%;
