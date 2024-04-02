@@ -77,12 +77,19 @@
 .info{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info a{
+  background-color: #00AB78;
+  border: #FFFF;
 }
 
 .card-body{
   margin: 0;
-  padding: 0rem;
   white-space: nowrap;
+  font-size: 13px;
 }
 
 .trofeus{
@@ -99,10 +106,16 @@
 .trofeu{
   border: #ffff 2px solid;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   white-space: nowrap;
   width: 15rem;
   height: 30rem;
+}
+
+.conquista{
+  margin: 0.3rem;
+  display: block;
 }
 
 .trof{
