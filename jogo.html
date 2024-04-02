@@ -48,27 +48,28 @@
     </div>
 
     <form class="cadastro">
-
-        <div class="campo">
-          <label><strong>Nome do jogo</strong></label>
-          <input type="text" name='nomeJogo' value="" disabled>
-        </div>
-        
+      <div class="mb-3" id="campo">
+        <label class="form-label"><strong>Nome do jogo</strong></label>
+        <input type="text" class="form-control" aria-describedby="Digite o nome" disabled>
+      </div>
+      <div class="mb-3">
         <div class="empresa">
           <div class="fabricante">
             <label><strong>Desenvolvedora</strong></label>
-            <input type="text" name='nomeDesenvolvedor' value="" disabled>
+            <input type="text" name='nomeDesenvolvedor' disabled>
           </div>
-
+  
           <div class="fabricante">
             <label><strong>Data de lançamento</strong></label>
-            <input type="date" name='dataLancamento' value="" disabled>
+            <input type="date" name='dataLancamento' disabled>
           </div>
         </div>
+      </div>
 
-        <div class="campo">
+      <div class="mb-3 form-check">
+        <div class="categorias">
           <label><strong>Categoria</strong></label>
-          <div class="categorias">
+          <div class="categoria">
             <label>
               <input type="radio" name="tipo1" value="Ação" disabled>Ação
             </label>
@@ -98,11 +99,14 @@
             </label>
           </div>
         </div>
+      </div>
 
-        <div class="campo">
-          <label><strong>Descrição do jogo</strong></label>
-          <textarea name="descricao" id="desc" cols="40" rows="5" aria-valuemax="" disabled ></textarea>
-        </div>
+      <div class="mb-3" id="campodesc">
+        <label><strong>Descrição do jogo</strong></label>
+        <textarea name="descricao" id="desc" cols="40" rows="5" disabled></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-danger">Voltar</button>
     </form>
   </main>
 
@@ -111,6 +115,6 @@
   </footer>
 
   <script src="/js/cadastro.js"></script>
-
+  
 </body>
 </html>

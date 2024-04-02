@@ -18,28 +18,30 @@
     <img src="imagens/logo 1.png" id="logo">
   </header>
   <main class="main">
-    <form class="cadastro">
 
-        <div class="campo">
-          <label><strong>Nome do jogo</strong></label>
-          <input type="text" name='nomeJogo' required>
-        </div>
-        
+    <form class="cadastro">
+      <div class="mb-3" id="campo">
+        <label class="form-label"><strong>Nome do jogo</strong></label>
+        <input type="text" class="form-control" aria-describedby="Digite o nome">
+      </div>
+      <div class="mb-3">
         <div class="empresa">
           <div class="fabricante">
             <label><strong>Desenvolvedora</strong></label>
             <input type="text" name='nomeDesenvolvedor' required>
           </div>
-
+  
           <div class="fabricante">
             <label><strong>Data de lançamento</strong></label>
             <input type="date" name='dataLancamento' required>
           </div>
         </div>
+      </div>
 
-        <div class="campo">
+      <div class="mb-3 form-check">
+        <div class="categorias">
           <label><strong>Categoria</strong></label>
-          <div class="categorias">
+          <div class="categoria">
             <label>
               <input type="radio" name="tipo1" value="Ação">Ação
             </label>
@@ -69,18 +71,23 @@
             </label>
           </div>
         </div>
+      </div>
 
-        <div class="campo">
-          <label><strong>Imagem</strong></label>
-          <input type="file" name="imagemJogo" required>
-        </div>
+      <div class="mb-3" id="campodesc">
+        <label><strong>Descrição do jogo</strong></label>
+        <textarea name="descricao" id="desc" cols="40" rows="5" required></textarea>
+      </div>
 
-        <div class="campo">
-          <label><strong>Descrição do jogo</strong></label>
-          <textarea name="descricao" id="desc" cols="40" rows="5" required></textarea>
-        </div>
-        <button type="submit" id="botao">Confirmar</button>
+      <div class="mb-3" id="campodesc">
+        <label><strong>Imagem</strong></label>
+        <input type="file" name="imagemJogo" required>
+      </div>
+      <div class="botoes">
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="button" class="btn btn-danger">Cancelar</button>
+      </div>
     </form>
+
   </main>
 
   <footer class="footer">

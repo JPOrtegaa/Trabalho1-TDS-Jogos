@@ -12,15 +12,15 @@
   margin-top: 1.5%;
   width: 40%;
   border: #FFFF 2px solid;
-  border-radius: 10%;
+  border-radius: 7px;
+  background-color: #a2b1ad;
 }
 
-.campo {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2%;
-  width: 80%;
-  margin-left: 10%;
+#campo {
+  width: 90%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .empresa{
@@ -28,19 +28,23 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  margin-left: 10%;
+  white-space: nowrap;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .fabricante{
   display: flex;
   flex-direction: column;
-  margin-top: 2%;
-  margin-right: 2%;
-  width: 43%;
+  width: 100%;
+  margin-left: 0.5rem;
 }
 
 .categorias{
-  margin-top: 2%;
+  margin-left: 0.5rem;
+}
+
+.categoria{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -55,9 +59,23 @@ form input{
   border-radius: 10px;
 }
 
-#botao{
-  margin-top: 1.5%;
-  width: 40%;
-  margin-left: 30%;
-  margin-bottom: 1.5%;
+#campodesc{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.botoes{
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
+}
+
+form button{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  width: 20rem;
 }
