@@ -31,7 +31,7 @@
     <form class="cadastro">
       <div class="mb-3" id="campo">
         <label class="form-label"><strong>Nome do jogo</strong></label>
-        <input type="text" class="form-control" aria-describedby="Digite o nome">
+        <input type="text" name="nomeJogo" class="form-control" aria-describedby="Digite o nome">
       </div>
       <div class="mb-3">
         <div class="empresa">
@@ -89,11 +89,11 @@
 
       <div class="mb-3" id="campodesc">
         <label><strong>Imagem</strong></label>
-        <input type="file" name="imagemJogo" required>
+        <input type="file" name="imagens" required>
       </div>
       <div class="botoes">
         <button type="submit" class="btn btn-primary">Confirmar</button>
-        <button type="button" class="btn btn-danger">Cancelar</button>
+        <button type="button" id="botaoCancelar" class="btn btn-danger">Cancelar</button>
       </div>
     </form>
 
