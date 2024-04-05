@@ -48,6 +48,7 @@ function printListaJogos(gameList){
         // Example: Add an image and text to the new game div
         const newGameImage = document.createElement("img");
         newGameImage.classList.add("capa");
+        console.log(game.imagens);
         newGameImage.src = game.imagens; // Add the source of your game image here
         newGameDiv.appendChild(newGameImage);
         
@@ -65,11 +66,15 @@ function printListaJogos(gameList){
 
 // Evento para pegar a info sobre o jogo clicado
 const gameDivs = document.querySelectorAll('.jogo');
-console.log(gameDivs);
+// console.log(gameDivs);
 
 gameDivs.forEach(gameDiv => {
     gameDiv.addEventListener("click", function (event) {
       event.preventDefault();
+
+      let gameName = event.target.textContent.trim();
+      sessionStorage.setItem("gameName", gameName);
+
       const gamePage = "jogo.html";
       window.location.href = gamePage;
     });    
