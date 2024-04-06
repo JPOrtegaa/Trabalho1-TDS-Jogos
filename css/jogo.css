@@ -9,13 +9,6 @@
   height: 50px;
 }
 
-.login{
-  margin-right: 3rem;
-  width: 120px;
-  height: 50px;
-  border-radius: 10%;
-}
-
 .main{
   background-color: #808080;
   width: 100%;
@@ -39,6 +32,9 @@
   border: #FFFF 2px solid;
   border-radius: 7px;
   background-color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 #campo {
@@ -96,4 +92,15 @@ form button{
   margin-right: 2rem;
   margin-bottom: 1rem;
   width: 38.5rem;
+}
+
+#botaovoltar{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#botaoVoltar{
+  width: 100%;
 }

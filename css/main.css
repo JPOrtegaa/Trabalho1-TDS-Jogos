@@ -56,6 +56,18 @@
   height: 12rem;
 }
 
+.pesquisa{
+  display: flex;
+}
+
+.pesquisa input{
+  border-radius: 5px;
+}
+
+#barrapesquisa{
+  margin-left: 8rem;
+}
+
 #lista{
   border: #ffff 2px solid;
   border-radius: 7px;

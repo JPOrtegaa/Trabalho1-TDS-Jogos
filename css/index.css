@@ -14,13 +14,6 @@
   height: 50px;
 }
 
-.login{
-  margin-right: 3rem;
-  width: 120px;
-  height: 50px;
-  border-radius: 10px;
-}
-
 .footer{
   display: flex;
   align-items: center;
