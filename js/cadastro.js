@@ -44,7 +44,7 @@ form.addEventListener('submit', function(event){
     console.log(imageFile);
 
     gameData['categorias'] = categorias;
-    gameData['horas'] = randomFloat(0, 500);
+    gameData['horas'] = randomFloat(0, 500).toFixed(1);
 
     gameList.push(gameData);
     console.log(gameList);

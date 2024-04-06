@@ -117,6 +117,20 @@ function printJogosRecentes(gameList){
 
 }
 
+const recentGameDivs = document.querySelectorAll('.card');
+
+recentGameDivs.forEach(div => {
+    div.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      let gameName = event.currentTarget.querySelector('strong').textContent;
+      console.log(gameName);
+      sessionStorage.setItem("gameName", gameName);
+
+      const gamePage = "jogo.html";
+      window.location.href = gamePage;
+    });    
+});
 
 // Evento para pegar a info sobre o jogo clicado
 const gameDivs = document.querySelectorAll('.jogo');
@@ -126,7 +140,7 @@ gameDivs.forEach(gameDiv => {
     gameDiv.addEventListener("click", function (event) {
       event.preventDefault();
 
-      let gameName = event.target.textContent.trim();
+      let gameName = event.currentTarget.textContent.trim();
       sessionStorage.setItem("gameName", gameName);
 
       const gamePage = "jogo.html";
