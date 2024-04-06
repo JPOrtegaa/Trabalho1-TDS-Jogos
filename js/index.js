@@ -73,7 +73,7 @@ function printJogosRecentes(gameList){
         const card = document.createElement('div');
         card.classList.add("card");
         card.style.width = "7rem";
-        card.style.height = "12rem";
+        card.style.height = "10rem";
 
         const newGameImage = document.createElement('img');
         newGameImage.classList.add('card-img-top');

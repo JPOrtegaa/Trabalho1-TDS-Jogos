@@ -62,10 +62,11 @@
 
 .pesquisa input{
   border-radius: 5px;
+  width: 20rem;
 }
 
 #barrapesquisa{
-  margin-left: 8rem;
+  margin-left: 4rem;
 }
 
 #lista{
