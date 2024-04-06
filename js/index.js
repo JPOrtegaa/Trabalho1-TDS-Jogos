@@ -14,7 +14,6 @@ let gameList = sessionStorage.getItem('gameList') || [];
 
 // Case there is no gameList
 if(gameList.length === 0){
-    console.log("nao criada!!");
     const game1 = new Game(
       "Dead by Daylight",
       "Behaviour Interactive Inc.",
@@ -26,13 +25,11 @@ if(gameList.length === 0){
     );
     gameList.push(game1);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
-    console.log(gameList);
     printGamesList(gameList);
     printRecentGames(gameList);
 }
 else{ // Otherwise
     gameList = JSON.parse(gameList);
-    console.log(gameList);
     printGamesList(gameList);
     printRecentGames(gameList);
 }

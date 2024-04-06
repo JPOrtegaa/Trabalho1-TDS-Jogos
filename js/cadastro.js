@@ -23,14 +23,10 @@ form.addEventListener('submit', function(event){
             const files = field.files;
             if (!files) return;
 
-            console.log(files);
-
             for(let i = 0; i < files.length; i++){
                 let imageName = 'imagens/' + files[i].name;
                 imageNames.push(imageName);
             }
-
-            console.log(imageNames);
 
             gameData[field.name] = imageNames;
         } else {
@@ -40,13 +36,11 @@ form.addEventListener('submit', function(event){
 
     let formData = new FormData(form);
     let imageFile = formData.get('imagens');
-    console.log(imageFile);
 
     gameData['categorias'] = categorias;
     gameData['horas'] = randomFloat(0, 500).toFixed(1);
 
     gameList.push(gameData);
-    console.log(gameList);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
 
     alert('Cadastro realizado com sucesso!');
