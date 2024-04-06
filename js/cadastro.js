@@ -44,6 +44,8 @@ form.addEventListener('submit', function(event){
     console.log(imageFile);
 
     gameData['categorias'] = categorias;
+    gameData['horas'] = randomFloat(0, 500);
+
     gameList.push(gameData);
     console.log(gameList);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
@@ -51,6 +53,10 @@ form.addEventListener('submit', function(event){
     alert('Cadastro realizado com sucesso!');
     window.location.href = 'index.html';
 })
+
+function randomFloat(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 const cancelarButton = document.getElementById('botaoCancelar');
 cancelarButton.addEventListener('click', function(event){
