@@ -1,5 +1,4 @@
-console.log('entrei na pag!');
-
+// Object for Game
 function Game(nome, dev, data, categorias, descricao, imagens, horas){
     this.nomeJogo = nome;
     this.nomeDesenvolvedor = dev;
@@ -10,26 +9,56 @@ function Game(nome, dev, data, categorias, descricao, imagens, horas){
     this.horas = horas;
 }
 
+// Any time the page is reloaded checks in sessionStorage for the gameList
 let gameList = sessionStorage.getItem('gameList') || [];
 
+// Case there is no gameList
 if(gameList.length === 0){
     console.log("nao criada!!");
-    const game1 = new Game('Dead by Daylight', 'dev', '2024-10-05', ['RPG', 'Outros'], 'dbd', ['imagens/dbdlogo.jpg'], 255.5);
+    const game1 = new Game(
+      "Dead by Daylight",
+      "Behaviour Interactive Inc.",
+      "2016-06-14",
+      ["Estratégia", "Outros"],
+      "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.",
+      ["imagens/1dbdlogo.jpg", "imagens/2dbd.jpg", "imagens/3dbd.jpg"],
+      255.5
+    );
     gameList.push(game1);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
     console.log(gameList);
-    printListaJogos(gameList);
-    printJogosRecentes(gameList);
+    printGamesList(gameList);
+    printRecentGames(gameList);
 }
-else{
+else{ // Otherwise
     gameList = JSON.parse(gameList);
     console.log(gameList);
-    printListaJogos(gameList);
-    printJogosRecentes(gameList);
+    printGamesList(gameList);
+    printRecentGames(gameList);
 }
 
 
-// Evento para adicionar um novo jogo
+// Event to search for a game in your library
+const searchBar = document.getElementById('buscarJogo');
+searchBar.addEventListener('keypress', function(event){
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        let gameSearch = searchBar.value;
+
+        if(gameSearch !== ''){
+            let game = gameList.find((game) => game.nomeJogo === gameSearch);
+            if(typeof game != 'undefined'){
+                printRecentGames([game]);
+            }
+        }
+        else{
+            printRecentGames(gameList);
+        }
+    }
+});
+
+
+// Event to add a new game
 const addGameButton = document.getElementById('addjogo');
 
 addGameButton.addEventListener("click", function (event) {
@@ -41,7 +70,8 @@ addGameButton.addEventListener("click", function (event) {
 
 });
 
-function printListaJogos(gameList){
+// Function to output html tags of games
+function printGamesList(gameList){
 
     gameList.forEach(game => {
         const newGameDiv = document.createElement("div");
@@ -67,7 +97,11 @@ function printListaJogos(gameList){
 
 }
 
-function printJogosRecentes(gameList){
+// Function to output html tags of recent games
+function printRecentGames(gameList){
+
+    const recentGames = document.getElementById("lista");
+    recentGames.innerHTML = '';
 
     gameList.forEach(game => {
         const card = document.createElement('div');
@@ -108,33 +142,33 @@ function printJogosRecentes(gameList){
 
         card.appendChild(cardBody);
 
-        const recentGames = document.getElementById('lista');
-
-        const text = document.createTextNode(game.nomeJogo[1]);
-
         recentGames.appendChild(card);
     });
 
+    generateRecentGameEventListener();
+
 }
 
-const recentGameDivs = document.querySelectorAll('.card');
+// Generate the click event listeners for each recentGame when the list is updated
+function generateRecentGameEventListener(){
+    const recentGameDivs = document.querySelectorAll(".card");
 
-recentGameDivs.forEach(div => {
-    div.addEventListener("click", function (event) {
-      event.preventDefault();
+    recentGameDivs.forEach((gameDiv) => {
+        gameDiv.addEventListener("click", function (event) {
+        event.preventDefault();
 
-      let gameName = event.currentTarget.querySelector('strong').textContent;
-      console.log(gameName);
-      sessionStorage.setItem("gameName", gameName);
+        let gameName = event.currentTarget.querySelector("strong").textContent;
+        sessionStorage.setItem("gameName", gameName);
 
-      const gamePage = "jogo.html";
-      window.location.href = gamePage;
-    });    
-});
+        const gamePage = "jogo.html";
+        window.location.href = gamePage;
+        });
+    });
+}
+
 
 // Evento para pegar a info sobre o jogo clicado
 const gameDivs = document.querySelectorAll('.jogo');
-// console.log(gameDivs);
 
 gameDivs.forEach(gameDiv => {
     gameDiv.addEventListener("click", function (event) {

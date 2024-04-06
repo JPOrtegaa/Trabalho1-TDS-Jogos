@@ -1,29 +1,29 @@
+// Whenever this page is loaded search for the gameName in sessionStorage
 let gameName = sessionStorage.getItem('gameName');
-// console.log(gameName);
 
+// Whenever this page is loaded retrieve the gameList in sessionStorage
 let gameList = sessionStorage.getItem("gameList");
 gameList = JSON.parse(gameList);
 
-console.log(gameList[0]);
-
+// Retrieve the data from the searched game by its name
 let gameData = gameList.find(game => game.nomeJogo === gameName);
 
-console.log(gameData);
-
-fillGameInfo(gameData);
-fillGameCarousel(gameData.imagens);
-
-function fillGameCarousel(images){
-
-    let carouselItems = document.querySelectorAll('.carousel-item img');
+// Function to fill the images from the game into the carousel
+const fillGameCarousel = function(images){
+    let carouselItems = document.querySelectorAll(".carousel-item img");
     let index = 0;
 
-    carouselItems.forEach(item => {
+    carouselItems.forEach((item) => {
         item.src = images[index];
         index++;
     });
-}
+};
 
+// Fill the form and carousel with game's data
+fillGameInfo(gameData);
+fillGameCarousel(gameData.imagens);
+
+// Function to fill the game info into the form
 function fillGameInfo(gameData){
     const nomeJogoInput = document.querySelector('#campo input[type="text"]');
     nomeJogoInput.value = gameData.nomeJogo;
@@ -45,16 +45,7 @@ function fillGameInfo(gameData){
     descricaoTextarea.value = gameData.descricao;
 }
 
-function getGameByName(gameList, gameName){
-    gameList.forEach(game => {
-        console.log(game.nomeJogo);
-        console.log(gameName);
-        if(game.nomeJogo === gameName){
-            return game.nomeJogo;
-        }
-    });
-}
-
+// Event to return to the main page
 const voltarButton = document.getElementById('botaoVoltar');
 voltarButton.addEventListener("click", function(){
 

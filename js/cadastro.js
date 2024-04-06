@@ -1,9 +1,8 @@
-
+// Whenever this page is loaded retrieve the gameList from sessionStorage
 let gameList = sessionStorage.getItem('gameList');
 gameList = JSON.parse(gameList);
 
-console.log(gameList);
-
+// Event for retrieving the info from a game that is being registered
 const form = document.querySelector('.cadastro');
 form.addEventListener('submit', function(event){
 
@@ -54,10 +53,10 @@ form.addEventListener('submit', function(event){
     window.location.href = 'index.html';
 })
 
-function randomFloat(min, max) {
-    return Math.random() * (max - min) + min;
-}
+// Function for generating random floats (used to fill the hours played field)
+const randomFloat = (min, max) => Math.random() * (max - min) + min;
 
+// Event to cancel the operation of registering
 const cancelarButton = document.getElementById('botaoCancelar');
 cancelarButton.addEventListener('click', function(event){
     
