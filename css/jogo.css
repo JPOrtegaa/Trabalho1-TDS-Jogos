@@ -104,3 +104,9 @@ form button{
 #botaoVoltar{
   width: 100%;
 }
+
+.carousel-image{
+  width: 100%; /* Ensures images take full width of carousel */
+  height: 300px; /* Set the desired height for consistency */
+  object-fit: cover; /* Ensures the images fill the allotted space while maintaining aspect ratio */
+}
