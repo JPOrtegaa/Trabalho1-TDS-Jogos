@@ -6,12 +6,23 @@ gameList = JSON.parse(gameList);
 
 console.log(gameList[0]);
 
-// let gameData = getGameByName(gameList, gameName);
 let gameData = gameList.find(game => game.nomeJogo === gameName);
 
 console.log(gameData);
 
 fillGameInfo(gameData);
+fillGameCarousel(gameData.imagens);
+
+function fillGameCarousel(images){
+
+    let carouselItems = document.querySelectorAll('.carousel-item img');
+    let index = 0;
+
+    carouselItems.forEach(item => {
+        item.src = images[index];
+        index++;
+    });
+}
 
 function fillGameInfo(gameData){
     const nomeJogoInput = document.querySelector('#campo input[type="text"]');

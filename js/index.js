@@ -13,7 +13,7 @@ let gameList = sessionStorage.getItem('gameList') || [];
 
 if(gameList.length === 0){
     console.log("nao criada!!");
-    const game1 = new Game('Dead by Daylight', 'dev', '2024-10-05', ['RPG', 'Outros'], 'dbd', 'imagens/dbdlogo.jpg');
+    const game1 = new Game('Dead by Daylight', 'dev', '2024-10-05', ['RPG', 'Outros'], 'dbd', ['imagens/dbdlogo.jpg']);
     gameList.push(game1);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
     console.log(gameList);
@@ -48,8 +48,7 @@ function printListaJogos(gameList){
         // Example: Add an image and text to the new game div
         const newGameImage = document.createElement("img");
         newGameImage.classList.add("capa");
-        console.log(game.imagens);
-        newGameImage.src = game.imagens; // Add the source of your game image here
+        newGameImage.src = game.imagens[0]; // Add the source of your game image here
         newGameDiv.appendChild(newGameImage);
         
         const newGameTitle = document.createTextNode(game.nomeJogo); // Change the text as needed

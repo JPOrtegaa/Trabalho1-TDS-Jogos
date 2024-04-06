@@ -11,7 +11,7 @@ form.addEventListener('submit', function(event){
 
     const gameData = {};
     let categorias = [];
-    let image;
+    let imageNames = [];
 
     for(let field of form.elements){
 
@@ -20,11 +20,22 @@ form.addEventListener('submit', function(event){
                 categorias.push(field.value);
             }
         }
-        else if(field.name != 'imagens'){
+        else if (field.name == 'imagens') {
+            const files = field.files;
+            if (!files) return;
+
+            console.log(files);
+
+            for(let i = 0; i < files.length; i++){
+                let imageName = 'imagens/' + files[i].name;
+                imageNames.push(imageName);
+            }
+
+            console.log(imageNames);
+
+            gameData[field.name] = imageNames;
+        } else {
             gameData[field.name] = field.value;
-        }
-        else{
-            gameData['imagens'] = image;
         }
     }
 
@@ -32,29 +43,13 @@ form.addEventListener('submit', function(event){
     let imageFile = formData.get('imagens');
     console.log(imageFile);
 
-    // arrumar leitura de imagens!!!!!
-    if(imageFile){
-        console.log('entrou!!');
-        let reader = new FileReader();
-        reader.onload = function(){
-            let imageData = reader.result;
-            console.log(imageData);
-            image = imageData;
-            // gameData['imagens'] = imageData;
-            console.log(gameData);
-        };
-        reader.readAsDataURL(imageFile);
-    }
-
-    // fazer a mesma coisa de categorias para img tbm
     gameData['categorias'] = categorias;
     gameList.push(gameData);
     console.log(gameList);
     sessionStorage.setItem('gameList', JSON.stringify(gameList));
 
     alert('Cadastro realizado com sucesso!');
-   // window.location.href = 'index.html';
-
+    window.location.href = 'index.html';
 })
 
 const cancelarButton = document.getElementById('botaoCancelar');
